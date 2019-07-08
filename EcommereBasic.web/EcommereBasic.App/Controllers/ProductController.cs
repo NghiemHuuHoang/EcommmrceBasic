@@ -42,7 +42,7 @@ namespace EcommereBasic.App.Controllers
         public ActionResult Create(Product product)
         {
             productService.SaveProduct(product);
-            return RedirectToAction("Index");
+            return RedirectToAction("ProductTable");
         }
 
         [HttpGet]

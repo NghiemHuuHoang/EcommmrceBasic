@@ -68,6 +68,23 @@
                 alert("fail");
             });
     });
+
+    $(".btnEdit").click(function () {
+        var confirmDelete = confirm("are you sure you want to update this product");
+        if (confirmDelete) {
+            $.ajax({
+               
+                url: "/Product/Edit",
+                data: { ID: $(this).attr('data-id') }
+            })
+                .done(function (response) {
+                    $("#actionCreate").html(response);
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("fail");
+                });
+        }
+    });
   
     $(".btnDelete").click(function () {
         var confirmDelete = confirm("are you sure you want to delete this product");
